@@ -1,1 +1,1 @@
-# README-generator
+# NodeJS README generator
