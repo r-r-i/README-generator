@@ -3,18 +3,15 @@ const inquirer = require("inquirer");
 const fs = require('fs');
 const generateMarkdown = require("./utils/generateMarkdown.js");
 
-fs.readFile('../README.md', 'utf8', (error,data) => 
-error ? console.log(error) : console.log(data))
-
 // TODO: Create an array of questions for user input
 const questions = [
     "What is the title of your project?",
-    "Add a description to your project",
-    "Add Installation Instructions for your project",
+    "Add a description for your project",
+    "What command should be run to install dependencies?",
     "Add usage information for your project",
     "Add contribution guidelines for your project",
-    "Add testing instructions for your project",
-    "What license would you like for your Application?",
+    "What command should be run to run tests?",
+    "What kind of license should your project have?",
     "What is your GITHUB username?",
     "What is your email address?",
 ];
