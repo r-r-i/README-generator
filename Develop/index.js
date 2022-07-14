@@ -1,62 +1,88 @@
 // TODO: Include packages needed for this application
-
 const inquirer = require("inquirer");
-const fs = require('fs')
+const fs = require('fs');
+const generateMarkdown = require("./utils/generateMarkdown.js");
+
+fs.readFile('../README.md', 'utf8', (error,data) => 
+error ? console.log(error) : console.log(data))
 
 // TODO: Create an array of questions for user input
-const questions = [];
+const questions = [
+    "What is the title of your project?",
+    "Add a description to your project",
+    "Add Installation Instructions for your project",
+    "Add usage information for your project",
+    "Add contribution guidelines for your project",
+    "Add testing instructions for your project",
+    "What license would you like for your Application?",
+    "What is your GITHUB username?",
+    "What is your email address?",
+];
 
-inquirer
-    .prompt([
+// TODO: Create a function to initialize app
+const promptUser = () => {
+    return inquirer.prompt([
         {
             type: 'input',
-            message: 'project title',
+            message: questions[0],
             name: 'title',
         },
         {
             type: 'input',
-            message: 'description',
+            message: questions[1],
             name: 'description',
         },
         {
             type: 'input',
-            message: 'installation instructions',
+            message: questions[2],
             name: 'install',
         },
         {
             type: 'input',
-            message: 'usage information',
+            message: questions[3],
             name: 'usage',
         },
         {
             type: 'input',
-            message: 'contribution guidelines',
+            message: questions[4],
             name: 'contributions',
         },
         {
             type: 'input',
-            message: 'test instructions',
+            message: questions[5],
             name: 'testing',
         },
-        // Need to create a license choice option
+        {
+            type: 'list',
+            message: questions[6],
+            name: 'license',
+            choices: ['MIT', 'APACHE 2.0', 'GPL 3.0', 'BSD 3', 'None']
+        },
         {
             type: 'input',
-            message: 'github',
+            message: questions[7],
             name: 'github',
         },
         {
             type: 'input',
-            message: 'email',
+            message: questions[8],
             name: 'email',
         },
         
     ])
 
+}
+
+
 // TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
 
-// TODO: Create a function to initialize app
-function init() {}
-
+const init = () => {
+    promptUser()
+    .then((data) => fs.writeFileSync('README.md', generateMarkdown(data)))
+    .then(() => console.log('Successfully created README!'))
+    .catch((err) => console.error(err));
+};
 // Function call to initialize app
+
+
 init();
