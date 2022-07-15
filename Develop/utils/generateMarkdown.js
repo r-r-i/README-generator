@@ -42,8 +42,7 @@ ${renderLicenseBadge(data.license)}
 - [contributions](#contributions)
 - [testing](#testing)
 - [license](#license)
-- [github](#github)
-- [contact](#contact)
+- [questions](#questions)
 
 ---
 
@@ -73,21 +72,17 @@ ${data.contributions}
 ${data.testing}
 ` + "```" + `
 
-## licensing
+## license
 
 ${renderLicenseLink(data.license)}
 
-## github
+## questions
 
-You can visit my github by following the link below.
+You can visit my github by following the link below. If you have any questions regarding this project, you can contact me through my email.
 
-[${data.github}](https://github.com/${data.github})
+- github: [${data.github}](https://github.com/${data.github})
 
-## contact
-
-If you have any questions regarding this project, you can contact me through the email below.
-
-${data.email}
+- email: ${data.email}
 `;
 }
 
