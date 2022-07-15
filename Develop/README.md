@@ -37,6 +37,8 @@ Contributions are not accepted. This is a private project.
 
 ## test instructions
 
+To run tests, run the following command:
+
 ```
 npm run test
 ```
