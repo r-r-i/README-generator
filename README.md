@@ -13,4 +13,4 @@ Note that the Deployed URL below is not currently live. As of now, this applicat
 command line. Upcoming patches introduce a front-end application.
 
 - Deployed URL: https://r-r-i.github.io/README-generator/
-- Visual demo: youtube link
+- Visual demo: https://www.youtube.com/watch?v=8CaEBu3gbAA
